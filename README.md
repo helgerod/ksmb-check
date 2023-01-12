@@ -3,6 +3,8 @@ Bash script made for ksmb linux kernel 5.15 vuln check
 
 Este script tem como objetivo verificar qual a versão do kernel linux e se o módulo `kmsbd` está ativo em instancias *AWS*.
 
+
+## Verificar vulnerabilidade ksmb na AWS
 ## Requisitos
 
 Para executar o script, é necessário ter:
@@ -15,8 +17,8 @@ Para executar o script, é necessário ter:
 Para usar o script, basta dar permissão de execução e executá-lo:
 
 ```shell
-chmod +x check.sh 
-./check.sh
+chmod +x aws-ksmb-check.sh 
+./aws-ksmb-check.sh
 ```
 
 O script irá executar os comandos `grep SMB_SERVER /boot/config-$(uname -r)` e `modinfo ksmbd`, armazenar a saída em variáveis e escrever os resultados em um arquivo local chamado `output.txt`. Em seguida, o script fará o upload do arquivo para o bucket S3 especificado na variável `bucket`.
@@ -37,9 +39,9 @@ Hostname: <hostname da máquina local>
 
 ## Colhendo Resultado
 
-O script `resultado.sh`  deve ser executado em uma instância local. Onde ira ler todos os arquivos gerados no *bucket*  e entragar o resultado em um único arquivo `resultado.txt`
+O script `aws-ksmb-result.sh`  deve ser executado em uma instância local. Onde ira ler todos os arquivos gerados no *bucket*  e entragar o resultado em um único arquivo `resultado.txt`
 
 ```shell
-chmod +x resultado.sh
-./resultado.sh
+chmod +x aws-ksmb-result.sh
+./aws-ksmb-result.sh
 ```
