@@ -1,8 +1,9 @@
-# AWS ksmb-check
+# ksmb-check
 
-Este script tem como objetivo verificar qual a versão do kernel linux e se o módulo `kmsbd` está ativo em instancias *AWS*.
+Este script tem como objetivo verificar qual a versão do kernel linux e se o módulo `kmsbd` está ativo local ou em instancias *AWS*.
 
 Versões vulneráveis kernel: 5.15.x (menor que 5.15.61), 5.16.x, 5.17.x, 5.18.x and 5.19.x (menor que 5.19.2)
+
 `CVE-2022-47938, CVE-2022-47939, CVE-2022-47940, CVE-2022-47941, CVE-2022-47942 and CVE-2022-47943)`
 
 ## Verificar vulnerabilidade ksmb na AWS
